@@ -12,9 +12,9 @@ namespace PriceList.Models
 {
     public class Item : EntityHeader
     {
-        public int UnitId { get; set; }
-        
-        [ForeignKey("UnitId")]
+        public int UnitRecId { get; set; }
+
+        [ForeignKey("UnitRecId")]
         public virtual Unit Unit { get; set; }        
 
     }

@@ -16,6 +16,11 @@ namespace PriceList.Models
         public Month Month { get; set; }
 
         public int Year { get; set; }
+
+        public int VendorRecId { get; set; }
+
+        [ForeignKey("VendorRecId")]
+        public virtual Vendor Vendor { get; set; }   
     }
 
     public class PurchItem : EntityLineRef
