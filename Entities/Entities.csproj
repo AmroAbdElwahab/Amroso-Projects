@@ -7,7 +7,7 @@
     <ProjectGuid>{6F90E1C9-B4E0-4085-8A80-08041C738C8F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PriceList.Entities</RootNamespace>
+    <RootNamespace>PriceList</RootNamespace>
     <AssemblyName>PriceList.Entities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

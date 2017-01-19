@@ -164,9 +164,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701192127353_1.cs" />
+    <Compile Include="Migrations\201701192127353_1.Designer.cs">
+      <DependentUpon>201701192127353_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Entities_UpdateDbContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PriceList\BaseEntities\EntityHeader.cs" />
+    <Compile Include="Models\PriceList\BaseEntities\EntityLineNum.cs" />
+    <Compile Include="Models\PriceList\BaseEntities\EntityLineRef.cs" />
+    <Compile Include="Models\PriceList\Constants\Enums.cs" />
+    <Compile Include="Models\PriceList\Entities\Item.cs" />
+    <Compile Include="Models\PriceList\Entities\Purch.cs" />
+    <Compile Include="Models\PriceList\Entities\Unit.cs" />
+    <Compile Include="Models\PriceList\Entities\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -236,6 +250,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701192127353_1.resx">
+      <DependentUpon>201701192127353_1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
