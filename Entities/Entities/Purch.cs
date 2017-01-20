@@ -10,7 +10,7 @@ using PriceList.Enums;
 
 namespace PriceList.Models
 {
-
+    [Table("Purch", Schema = "Transactions")]
     public class Purch : EntityHeader
     {
         public Month Month { get; set; }
@@ -23,6 +23,7 @@ namespace PriceList.Models
         public virtual Vendor Vendor { get; set; }   
     }
 
+    [Table("PurchItem", Schema = "Transactions")]
     public class PurchItem : EntityLineRef
     {
         [ForeignKey("ParentRecId")]

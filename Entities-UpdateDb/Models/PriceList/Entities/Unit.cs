@@ -10,6 +10,7 @@ using PriceList.Enums;
 
 namespace PriceList.Models
 {
+    [Table("Unit", Schema = "Setup")]
     public class Unit : EntityHeader
     {
     }

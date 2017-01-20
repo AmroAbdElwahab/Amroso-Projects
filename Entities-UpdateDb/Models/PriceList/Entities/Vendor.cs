@@ -10,6 +10,7 @@ using PriceList.Enums;
 
 namespace PriceList.Models
 {
+    [Table("Vendor", Schema = "Setup")]
     public class Vendor : EntityHeader
     {
         public string Address { get; set; }
