@@ -3,25 +3,25 @@ namespace Entities_UpdateDb.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _1 : DbMigration
+    public partial class _4 : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Items",
+                "Setup.Item",
                 c => new
                     {
                         RecId = c.Int(nullable: false, identity: true),
-                        UnitId = c.Int(nullable: false),
+                        UnitRecId = c.Int(nullable: false),
                         Code = c.String(maxLength: 20),
                         Name = c.String(maxLength: 150),
                     })
                 .PrimaryKey(t => t.RecId)
-                .ForeignKey("dbo.Units", t => t.UnitId, cascadeDelete: true)
-                .Index(t => t.UnitId);
+                .ForeignKey("Setup.Unit", t => t.UnitRecId, cascadeDelete: true)
+                .Index(t => t.UnitRecId);
             
             CreateTable(
-                "dbo.Units",
+                "Setup.Unit",
                 c => new
                     {
                         RecId = c.Int(nullable: false, identity: true),
@@ -31,7 +31,7 @@ namespace Entities_UpdateDb.Migrations
                 .PrimaryKey(t => t.RecId);
             
             CreateTable(
-                "dbo.PurchItems",
+                "Transactions.PurchItem",
                 c => new
                     {
                         ParentRecId = c.Int(nullable: false),
@@ -40,25 +40,28 @@ namespace Entities_UpdateDb.Migrations
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => new { t.ParentRecId, t.ChiledRecId })
-                .ForeignKey("dbo.Items", t => t.ChiledRecId, cascadeDelete: true)
-                .ForeignKey("dbo.Purches", t => t.ParentRecId, cascadeDelete: true)
+                .ForeignKey("Setup.Item", t => t.ChiledRecId, cascadeDelete: true)
+                .ForeignKey("Transactions.Purch", t => t.ParentRecId, cascadeDelete: true)
                 .Index(t => t.ParentRecId)
                 .Index(t => t.ChiledRecId);
             
             CreateTable(
-                "dbo.Purches",
+                "Transactions.Purch",
                 c => new
                     {
                         RecId = c.Int(nullable: false, identity: true),
                         Month = c.Int(nullable: false),
                         Year = c.Int(nullable: false),
+                        VendorRecId = c.Int(nullable: false),
                         Code = c.String(maxLength: 20),
                         Name = c.String(maxLength: 150),
                     })
-                .PrimaryKey(t => t.RecId);
+                .PrimaryKey(t => t.RecId)
+                .ForeignKey("Setup.Vendor", t => t.VendorRecId, cascadeDelete: true)
+                .Index(t => t.VendorRecId);
             
             CreateTable(
-                "dbo.Vendors",
+                "Setup.Vendor",
                 c => new
                     {
                         RecId = c.Int(nullable: false, identity: true),
@@ -72,17 +75,19 @@ namespace Entities_UpdateDb.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.PurchItems", "ParentRecId", "dbo.Purches");
-            DropForeignKey("dbo.PurchItems", "ChiledRecId", "dbo.Items");
-            DropForeignKey("dbo.Items", "UnitId", "dbo.Units");
-            DropIndex("dbo.PurchItems", new[] { "ChiledRecId" });
-            DropIndex("dbo.PurchItems", new[] { "ParentRecId" });
-            DropIndex("dbo.Items", new[] { "UnitId" });
-            DropTable("dbo.Vendors");
-            DropTable("dbo.Purches");
-            DropTable("dbo.PurchItems");
-            DropTable("dbo.Units");
-            DropTable("dbo.Items");
+            DropForeignKey("Transactions.PurchItem", "ParentRecId", "Transactions.Purch");
+            DropForeignKey("Transactions.Purch", "VendorRecId", "Setup.Vendor");
+            DropForeignKey("Transactions.PurchItem", "ChiledRecId", "Setup.Item");
+            DropForeignKey("Setup.Item", "UnitRecId", "Setup.Unit");
+            DropIndex("Transactions.Purch", new[] { "VendorRecId" });
+            DropIndex("Transactions.PurchItem", new[] { "ChiledRecId" });
+            DropIndex("Transactions.PurchItem", new[] { "ParentRecId" });
+            DropIndex("Setup.Item", new[] { "UnitRecId" });
+            DropTable("Setup.Vendor");
+            DropTable("Transactions.Purch");
+            DropTable("Transactions.PurchItem");
+            DropTable("Setup.Unit");
+            DropTable("Setup.Item");
         }
     }
 }

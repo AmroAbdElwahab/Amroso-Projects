@@ -164,17 +164,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701192127353_1.cs" />
-    <Compile Include="Migrations\201701192127353_1.Designer.cs">
-      <DependentUpon>201701192127353_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701192143204_2.cs" />
-    <Compile Include="Migrations\201701192143204_2.Designer.cs">
-      <DependentUpon>201701192143204_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701202257137_3.cs" />
-    <Compile Include="Migrations\201701202257137_3.Designer.cs">
-      <DependentUpon>201701202257137_3.cs</DependentUpon>
+    <Compile Include="Migrations\201701202350029_4.cs" />
+    <Compile Include="Migrations\201701202350029_4.Designer.cs">
+      <DependentUpon>201701202350029_4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -260,14 +252,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701192127353_1.resx">
-      <DependentUpon>201701192127353_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701192143204_2.resx">
-      <DependentUpon>201701192143204_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701202257137_3.resx">
-      <DependentUpon>201701202257137_3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701202350029_4.resx">
+      <DependentUpon>201701202350029_4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
