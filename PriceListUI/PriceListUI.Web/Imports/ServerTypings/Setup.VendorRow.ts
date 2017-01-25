@@ -3,6 +3,7 @@
         RecId?: number;
         Code?: string;
         Name?: string;
+        Image?: string;
         Address?: string;
     }
 
@@ -15,10 +16,11 @@
             export declare const RecId: string;
             export declare const Code: string;
             export declare const Name: string;
+            export declare const Image: string;
             export declare const Address: string;
         }
 
-        ['RecId', 'Code', 'Name', 'Address'].forEach(x => (<any>Fields)[x] = x);
+        ['RecId', 'Code', 'Name', 'Image', 'Address'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

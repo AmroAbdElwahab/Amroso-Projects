@@ -7,8 +7,13 @@
 
     export namespace UnitRow {
         export const idProperty = 'RecId';
-        export const nameProperty = 'Code';
+        export const nameProperty = 'Name';
         export const localTextPrefix = 'Setup.Unit';
+        export const lookupKey = 'Setup.Unit';
+
+        export function getLookup(): Q.Lookup<UnitRow> {
+            return Q.getLookup<UnitRow>('Setup.Unit');
+        }
 
         export namespace Fields {
             export declare const RecId: string;

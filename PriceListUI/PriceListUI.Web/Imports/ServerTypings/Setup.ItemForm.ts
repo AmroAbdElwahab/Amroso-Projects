@@ -5,11 +5,11 @@
     }
 
     export interface ItemForm {
-        UnitRecId: Serenity.IntegerEditor;
         Code: Serenity.StringEditor;
         Name: Serenity.StringEditor;
+        UnitRecId: Serenity.LookupEditor;
     }
 
-    [['UnitRecId', () => Serenity.IntegerEditor], ['Code', () => Serenity.StringEditor], ['Name', () => Serenity.StringEditor]].forEach(x => Object.defineProperty(ItemForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
+    [['Code', () => Serenity.StringEditor], ['Name', () => Serenity.StringEditor], ['UnitRecId', () => Serenity.LookupEditor]].forEach(x => Object.defineProperty(ItemForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
 }
 

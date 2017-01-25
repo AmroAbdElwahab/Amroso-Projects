@@ -413,7 +413,7 @@ var PriceListUI;
         }(Serenity.PrefixedContext));
         ItemForm.formKey = 'Setup.Item';
         Setup.ItemForm = ItemForm;
-        [['UnitRecId', function () { return Serenity.IntegerEditor; }], ['Code', function () { return Serenity.StringEditor; }], ['Name', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(ItemForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Code', function () { return Serenity.StringEditor; }], ['Name', function () { return Serenity.StringEditor; }], ['UnitRecId', function () { return Serenity.LookupEditor; }]].forEach(function (x) { return Object.defineProperty(ItemForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Setup = PriceListUI.Setup || (PriceListUI.Setup = {}));
 })(PriceListUI || (PriceListUI = {}));
 var PriceListUI;
@@ -472,8 +472,13 @@ var PriceListUI;
         var UnitRow;
         (function (UnitRow) {
             UnitRow.idProperty = 'RecId';
-            UnitRow.nameProperty = 'Code';
+            UnitRow.nameProperty = 'Name';
             UnitRow.localTextPrefix = 'Setup.Unit';
+            UnitRow.lookupKey = 'Setup.Unit';
+            function getLookup() {
+                return Q.getLookup('Setup.Unit');
+            }
+            UnitRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = UnitRow.Fields || (UnitRow.Fields = {}));
@@ -511,7 +516,7 @@ var PriceListUI;
         }(Serenity.PrefixedContext));
         VendorForm.formKey = 'Setup.Vendor';
         Setup.VendorForm = VendorForm;
-        [['Address', function () { return Serenity.StringEditor; }], ['Code', function () { return Serenity.StringEditor; }], ['Name', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(VendorForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Code', function () { return Serenity.StringEditor; }], ['Name', function () { return Serenity.StringEditor; }], ['Address', function () { return Serenity.TextAreaEditor; }], ['Image', function () { return Serenity.ImageUploadEditor; }]].forEach(function (x) { return Object.defineProperty(VendorForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Setup = PriceListUI.Setup || (PriceListUI.Setup = {}));
 })(PriceListUI || (PriceListUI = {}));
 var PriceListUI;
@@ -526,7 +531,7 @@ var PriceListUI;
             var Fields;
             (function (Fields) {
             })(Fields = VendorRow.Fields || (VendorRow.Fields = {}));
-            ['RecId', 'Code', 'Name', 'Address'].forEach(function (x) { return Fields[x] = x; });
+            ['RecId', 'Code', 'Name', 'Image', 'Address'].forEach(function (x) { return Fields[x] = x; });
         })(VendorRow = Setup.VendorRow || (Setup.VendorRow = {}));
     })(Setup = PriceListUI.Setup || (PriceListUI.Setup = {}));
 })(PriceListUI || (PriceListUI = {}));

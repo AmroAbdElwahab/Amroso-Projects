@@ -35,6 +35,13 @@ namespace PriceListUI.Setup.Entities
             set { Fields.Name[this] = value; }
         }
 
+        [DisplayName("Image"), Size(100),ImageUploadEditor(FilenameFormat="Vendor/Image/~"), QuickSearch]
+        public String Image
+        {
+            get { return Fields.Image[this]; }
+            set { Fields.Image[this] = value; }
+        }
+
         [DisplayName("Address"), QuickSearch]
         public String Address
         {
@@ -64,9 +71,9 @@ namespace PriceListUI.Setup.Entities
             public Int32Field RecId;
             public StringField Code;
             public StringField Name;
+            public StringField Image;
             public StringField Address;
-
-
+            
             public RowFields()
                 : base("[Setup].[Vendor]")
             {

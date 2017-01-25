@@ -12,6 +12,7 @@ namespace PriceListUI.Setup.Entities
     [ConnectionKey("Default"), DisplayName("Unit"), InstanceName("Unit"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("Setup.Unit")]
     public sealed class UnitRow : Row, IIdRow, INameRow
     {
         [DisplayName("Rec Id"), Identity]
@@ -42,7 +43,7 @@ namespace PriceListUI.Setup.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.Code; }
+            get { return Fields.Name; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();

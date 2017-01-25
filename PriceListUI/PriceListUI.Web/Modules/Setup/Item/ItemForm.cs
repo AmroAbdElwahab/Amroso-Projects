@@ -13,8 +13,9 @@ namespace PriceListUI.Setup.Forms
     [BasedOnRow(typeof(Entities.ItemRow))]
     public class ItemForm
     {
-        public Int32 UnitRecId { get; set; }
+        
         public String Code { get; set; }
         public String Name { get; set; }
+        public Int32 UnitRecId { get; set; }
     }
 }

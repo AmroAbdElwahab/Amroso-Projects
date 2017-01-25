@@ -21,13 +21,6 @@ namespace PriceListUI.Setup.Entities
             set { Fields.RecId[this] = value; }
         }
 
-        [DisplayName("Unit Rec"), NotNull, ForeignKey("[Setup].[Unit]", "RecId"), LeftJoin("jUnitRec"), TextualField("UnitRecCode")]
-        public Int32? UnitRecId
-        {
-            get { return Fields.UnitRecId[this]; }
-            set { Fields.UnitRecId[this] = value; }
-        }
-
         [DisplayName("Code"), Size(20), QuickSearch]
         public String Code
         {
@@ -42,6 +35,14 @@ namespace PriceListUI.Setup.Entities
             set { Fields.Name[this] = value; }
         }
 
+        [DisplayName("Unit"), NotNull, ForeignKey("[Setup].[Unit]", "RecId"), LeftJoin("jUnitRec"), TextualField("UnitRecCode")]
+        [LookupEditor("Setup.Unit")]
+        public Int32? UnitRecId
+        {
+            get { return Fields.UnitRecId[this]; }
+            set { Fields.UnitRecId[this] = value; }
+        }
+
         [DisplayName("Unit Rec Code"), Expression("jUnitRec.[Code]")]
         public String UnitRecCode
         {
@@ -49,7 +50,7 @@ namespace PriceListUI.Setup.Entities
             set { Fields.UnitRecCode[this] = value; }
         }
 
-        [DisplayName("Unit Rec Name"), Expression("jUnitRec.[Name]")]
+        [DisplayName("Unit"), Expression("jUnitRec.[Name]")]
         public String UnitRecName
         {
             get { return Fields.UnitRecName[this]; }

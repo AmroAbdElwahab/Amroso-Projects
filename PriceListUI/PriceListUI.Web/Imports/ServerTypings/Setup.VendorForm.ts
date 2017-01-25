@@ -5,11 +5,12 @@
     }
 
     export interface VendorForm {
-        Address: Serenity.StringEditor;
         Code: Serenity.StringEditor;
         Name: Serenity.StringEditor;
+        Address: Serenity.TextAreaEditor;
+        Image: Serenity.ImageUploadEditor;
     }
 
-    [['Address', () => Serenity.StringEditor], ['Code', () => Serenity.StringEditor], ['Name', () => Serenity.StringEditor]].forEach(x => Object.defineProperty(VendorForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
+    [['Code', () => Serenity.StringEditor], ['Name', () => Serenity.StringEditor], ['Address', () => Serenity.TextAreaEditor], ['Image', () => Serenity.ImageUploadEditor]].forEach(x => Object.defineProperty(VendorForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
 }
 

@@ -13,11 +13,15 @@ namespace PriceListUI.Setup.Columns
     [BasedOnRow(typeof(Entities.ItemRow))]
     public class ItemColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight,Hidden]
         public Int32 RecId { get; set; }
-        public Int32 UnitRecId { get; set; }
+
         [EditLink]
         public String Code { get; set; }
+
+        [EditLink]
         public String Name { get; set; }
+
+        public String UnitRecName { get; set; }
     }
 }

@@ -15,6 +15,12 @@ namespace PriceListUI.Setup.Forms
     {
         public String Code { get; set; }
         public String Name { get; set; }
+
+        [TextAreaEditor(Rows = 5)]
         public String Address { get; set; }
+
+        public String Image { get; set; }
+
+
     }
 }
