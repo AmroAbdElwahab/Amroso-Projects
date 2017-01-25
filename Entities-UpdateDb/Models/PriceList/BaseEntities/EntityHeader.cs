@@ -19,5 +19,8 @@ namespace PriceList.BaseEntities
 
         [StringLength(150)]
         public string Name { get; set; }
+
+        [StringLength(100)]
+        public string Image { get; set; }
     }
 }
