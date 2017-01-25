@@ -1,0 +1,19 @@
+﻿
+namespace PriceListUI.Setup.Forms
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using System;
+    using System.ComponentModel;
+    using System.Collections.Generic;
+    using System.IO;
+
+    [FormScript("Setup.Unit")]
+    [BasedOnRow(typeof(Entities.UnitRow))]
+    public class UnitForm
+    {
+        public String Code { get; set; }
+        public String Name { get; set; }
+    }
+}
