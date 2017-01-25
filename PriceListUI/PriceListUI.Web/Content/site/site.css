@@ -7437,3 +7437,21 @@ section.content > .s-DataGrid {
   width: 45%;
   float: right;
 }
+.s-Setup-ItemDialog > .size {
+  width: 650px;
+}
+.s-Setup-ItemDialog .caption {
+  width: 150px;
+}
+.s-Setup-UnitDialog > .size {
+  width: 650px;
+}
+.s-Setup-UnitDialog .caption {
+  width: 150px;
+}
+.s-Setup-VendorDialog > .size {
+  width: 650px;
+}
+.s-Setup-VendorDialog .caption {
+  width: 150px;
+}

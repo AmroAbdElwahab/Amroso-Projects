@@ -5,13 +5,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace PriceListUI.Northwind
+namespace PriceListUI.Setup
 {
-    public partial class NotesEditorAttribute : CustomEditorAttribute
+    public partial class UnitEditorAttribute : CustomEditorAttribute
     {
-        public const string Key = "PriceListUI.Northwind.NotesEditor";
+        public const string Key = "PriceListUI.Setup.UnitEditor";
 
-        public NotesEditorAttribute()
+        public UnitEditorAttribute()
             : base(Key)
         {
         }
