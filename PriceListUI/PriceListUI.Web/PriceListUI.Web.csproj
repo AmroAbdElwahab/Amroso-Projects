@@ -560,6 +560,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
+    <Content Include="Imports\ServerTypings\Setup.ItemColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </Content>
+    <Content Include="Imports\ServerTypings\Setup.UnitColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </Content>
+    <Content Include="Imports\ServerTypings\Setup.VendorColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </Content>
     <Content Include="Modules\Membership\Account\SignUp\AccountSignUp.AdminLTE.cshtml" />
     <Content Include="Imports\Web.config" />
     <Content Include="Content\adminlte\img\avatar.png" />
@@ -1524,6 +1533,48 @@
     <TypeScriptCompile Include="Modules\Common\Helpers\ExcelExportHelper.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\BasicProgressDialog.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\BulkServiceAction.ts" />
+    <Content Include="Modules\Setup\Item\ItemIndex.cshtml" />
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Setup.ItemRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Setup.ItemService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Setup.ItemForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Setup\Item\ItemGrid.ts" />
+    <TypeScriptCompile Include="Modules\Setup\Item\ItemDialog.ts" />
+    <TypeScriptCompile Include="Modules\Setup\Item\ItemEditor.ts" />
+    <TypeScriptCompile Include="Modules\Setup\Item\ItemEditorDialog.ts" />
+    <Content Include="Modules\Setup\Unit\UnitIndex.cshtml" />
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Setup.UnitRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Setup.UnitService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Setup.UnitForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Setup\Unit\UnitGrid.ts" />
+    <TypeScriptCompile Include="Modules\Setup\Unit\UnitDialog.ts" />
+    <TypeScriptCompile Include="Modules\Setup\Unit\UnitEditor.ts" />
+    <TypeScriptCompile Include="Modules\Setup\Unit\UnitEditorDialog.ts" />
+    <Content Include="Modules\Setup\Vendor\VendorIndex.cshtml" />
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Setup.VendorRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Setup.VendorService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Setup.VendorForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Setup\Vendor\VendorGrid.ts" />
+    <TypeScriptCompile Include="Modules\Setup\Vendor\VendorDialog.ts" />
+    <TypeScriptCompile Include="Modules\Setup\Vendor\VendorEditor.ts" />
+    <TypeScriptCompile Include="Modules\Setup\Vendor\VendorEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1540,6 +1591,15 @@
     <Compile Include="App_Start\SiteInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\Setup.ItemEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\Setup.UnitEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\Setup.VendorEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Modules\Administration\Language\LanguageLookup.cs" />
     <Compile Include="Modules\Administration\RolePermission\RolePermissionUpdateRequest.cs" />
@@ -1569,55 +1629,7 @@
     <Compile Include="Imports\ClientTypes\Administration.RoleCheckEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.ChangingLookupTextEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.FilteredLookupDetailEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.HardcodedValuesEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.InlineImageFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\BasicSamples.ProduceSeafoodCategoryEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
     <Compile Include="Imports\ClientTypes\Common.EnumSelectFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Meeting.MeetingAttendeeEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.CustomerEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.EmployeeFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.EmployeeListFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.FreightFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.NotesEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.OrderDetailsEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.PhoneEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Northwind.ShipperFormatterAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\Organization.BusinessUnitEditorAttribute.cs">
-      <DependentUpon>ClientTypes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imports\ClientTypes\StaticTextBlockAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DefaultDB\DefaultDB_20160515_072600_UserPreferences.cs" />
@@ -1700,6 +1712,24 @@
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRow.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRepository.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionEndpoint.cs" />
+    <Compile Include="Modules\Setup\Item\ItemRow.cs" />
+    <Compile Include="Modules\Setup\Item\ItemColumns.cs" />
+    <Compile Include="Modules\Setup\Item\ItemForm.cs" />
+    <Compile Include="Modules\Setup\Item\ItemRepository.cs" />
+    <Compile Include="Modules\Setup\Item\ItemEndpoint.cs" />
+    <Compile Include="Modules\Setup\Item\ItemPage.cs" />
+    <Compile Include="Modules\Setup\Unit\UnitRow.cs" />
+    <Compile Include="Modules\Setup\Unit\UnitColumns.cs" />
+    <Compile Include="Modules\Setup\Unit\UnitForm.cs" />
+    <Compile Include="Modules\Setup\Unit\UnitRepository.cs" />
+    <Compile Include="Modules\Setup\Unit\UnitEndpoint.cs" />
+    <Compile Include="Modules\Setup\Unit\UnitPage.cs" />
+    <Compile Include="Modules\Setup\Vendor\VendorRow.cs" />
+    <Compile Include="Modules\Setup\Vendor\VendorColumns.cs" />
+    <Compile Include="Modules\Setup\Vendor\VendorForm.cs" />
+    <Compile Include="Modules\Setup\Vendor\VendorRepository.cs" />
+    <Compile Include="Modules\Setup\Vendor\VendorEndpoint.cs" />
+    <Compile Include="Modules\Setup\Vendor\VendorPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
