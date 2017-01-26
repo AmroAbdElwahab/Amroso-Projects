@@ -14,7 +14,7 @@ namespace PriceList.BaseEntities
         [DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public int RecId { get; set; }
 
-        [Index]
+        [Index(IsUnique = true)]
         [StringLength(20)]
         public string Code { get; set; }
 
