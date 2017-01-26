@@ -11,7 +11,7 @@ using PriceList.Enums;
 namespace PriceList.Models
 {
     [Table("Item", Schema = "Setup")]
-    public class Item : EntityHeader
+    public class Item : SetupEntityHeader
     {
         public int UnitRecId { get; set; }
 

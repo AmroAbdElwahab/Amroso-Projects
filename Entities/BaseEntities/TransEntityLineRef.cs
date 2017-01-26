@@ -8,13 +8,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PriceList.BaseEntities
 {
-    public abstract class EntityLineNum
+    public abstract class TransEntityLineRef
     {
         [Key, Column(Order = 1)]
         public int ParentRecId { get; set; }
 
         [Key, Column(Order = 2)]
-        [DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public int ChiledRecId { get; set; }
     }
 }

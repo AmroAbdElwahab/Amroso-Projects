@@ -11,12 +11,8 @@ using PriceList.Enums;
 namespace PriceList.Models
 {
     [Table("Purch", Schema = "Transactions")]
-    public class Purch : EntityHeader
+    public class Purch : TransEntityHeader
     {
-        public Month Month { get; set; }
-
-        public int Year { get; set; }
-
         public int VendorRecId { get; set; }
 
         [ForeignKey("VendorRecId")]
@@ -24,7 +20,7 @@ namespace PriceList.Models
     }
 
     [Table("PurchItem", Schema = "Transactions")]
-    public class PurchItem : EntityLineRef
+    public class PurchItem : TransEntityLineRef
     {
         [ForeignKey("ParentRecId")]
         public virtual Purch Purch { get; set; }

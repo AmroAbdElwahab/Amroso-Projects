@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Serenity.Core">
+      <HintPath>..\..\PriceListUI\packages\Serenity.Core.2.8.11\lib\net45\Serenity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -177,9 +180,10 @@
     <Compile Include="Models\Entities_UpdateDbContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\PriceList\BaseEntities\EntityHeader.cs" />
-    <Compile Include="Models\PriceList\BaseEntities\EntityLineNum.cs" />
-    <Compile Include="Models\PriceList\BaseEntities\EntityLineRef.cs" />
+    <Compile Include="Models\PriceList\BaseEntities\SetupEntityHeader.cs" />
+    <Compile Include="Models\PriceList\BaseEntities\TransEntityHeader.cs" />
+    <Compile Include="Models\PriceList\BaseEntities\TransEntityLineNum.cs" />
+    <Compile Include="Models\PriceList\BaseEntities\TransEntityLineRef.cs" />
     <Compile Include="Models\PriceList\Constants\Enums.cs" />
     <Compile Include="Models\PriceList\Entities\Item.cs" />
     <Compile Include="Models\PriceList\Entities\Purch.cs" />

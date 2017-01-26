@@ -30,6 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Serenity.Core">
+      <HintPath>..\..\PriceListUI\packages\Serenity.Core.2.8.11\lib\net45\Serenity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -40,9 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseEntities\EntityHeader.cs" />
-    <Compile Include="BaseEntities\EntityLineNum.cs" />
-    <Compile Include="BaseEntities\EntityLineRef.cs" />
+    <Compile Include="BaseEntities\SetupEntityHeader.cs" />
+    <Compile Include="BaseEntities\TransEntityLineNum.cs" />
+    <Compile Include="BaseEntities\TransEntityLineRef.cs" />
+    <Compile Include="BaseEntities\TransEntityHeader.cs" />
     <Compile Include="Constants\Enums.cs" />
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\Purch.cs" />
