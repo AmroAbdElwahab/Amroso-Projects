@@ -554,6 +554,55 @@ var PriceListUI;
 })(PriceListUI || (PriceListUI = {}));
 var PriceListUI;
 (function (PriceListUI) {
+    var Transactions;
+    (function (Transactions) {
+        var PurchForm = (function (_super) {
+            __extends(PurchForm, _super);
+            function PurchForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            return PurchForm;
+        }(Serenity.PrefixedContext));
+        PurchForm.formKey = 'Transactions.Purch';
+        Transactions.PurchForm = PurchForm;
+        [['VendorRecId', function () { return Serenity.IntegerEditor; }], ['Code', function () { return Serenity.StringEditor; }], ['Date', function () { return Serenity.DateEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['Status', function () { return Serenity.EnumEditor; }]].forEach(function (x) { return Object.defineProperty(PurchForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Transactions = PriceListUI.Transactions || (PriceListUI.Transactions = {}));
+})(PriceListUI || (PriceListUI = {}));
+var PriceListUI;
+(function (PriceListUI) {
+    var Transactions;
+    (function (Transactions) {
+        var PurchRow;
+        (function (PurchRow) {
+            PurchRow.idProperty = 'RecId';
+            PurchRow.nameProperty = 'Code';
+            PurchRow.localTextPrefix = 'Transactions.Purch';
+            var Fields;
+            (function (Fields) {
+            })(Fields = PurchRow.Fields || (PurchRow.Fields = {}));
+            ['RecId', 'VendorRecId', 'Code', 'Date', 'Description', 'Status', 'VendorRecAddress', 'VendorRecCode', 'VendorRecName', 'VendorRecImage'].forEach(function (x) { return Fields[x] = x; });
+        })(PurchRow = Transactions.PurchRow || (Transactions.PurchRow = {}));
+    })(Transactions = PriceListUI.Transactions || (PriceListUI.Transactions = {}));
+})(PriceListUI || (PriceListUI = {}));
+var PriceListUI;
+(function (PriceListUI) {
+    var Transactions;
+    (function (Transactions) {
+        var PurchService;
+        (function (PurchService) {
+            PurchService.baseUrl = 'Transactions/Purch';
+            var Methods;
+            (function (Methods) {
+            })(Methods = PurchService.Methods || (PurchService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                PurchService[x] = function (r, s, o) { return Q.serviceRequest(PurchService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = PurchService.baseUrl + '/' + x;
+            });
+        })(PurchService = Transactions.PurchService || (Transactions.PurchService = {}));
+    })(Transactions = PriceListUI.Transactions || (PriceListUI.Transactions = {}));
+})(PriceListUI || (PriceListUI = {}));
+var PriceListUI;
+(function (PriceListUI) {
     var Administration;
     (function (Administration) {
         var LanguageDialog = (function (_super) {
@@ -3052,5 +3101,97 @@ var PriceListUI;
         ], VendorGrid);
         Setup.VendorGrid = VendorGrid;
     })(Setup = PriceListUI.Setup || (PriceListUI.Setup = {}));
+})(PriceListUI || (PriceListUI = {}));
+var PriceListUI;
+(function (PriceListUI) {
+    var Transactions;
+    (function (Transactions) {
+        var PurchDialog = (function (_super) {
+            __extends(PurchDialog, _super);
+            function PurchDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transactions.PurchForm(_this.idPrefix);
+                return _this;
+            }
+            PurchDialog.prototype.getFormKey = function () { return Transactions.PurchForm.formKey; };
+            PurchDialog.prototype.getIdProperty = function () { return Transactions.PurchRow.idProperty; };
+            PurchDialog.prototype.getLocalTextPrefix = function () { return Transactions.PurchRow.localTextPrefix; };
+            PurchDialog.prototype.getNameProperty = function () { return Transactions.PurchRow.nameProperty; };
+            PurchDialog.prototype.getService = function () { return Transactions.PurchService.baseUrl; };
+            return PurchDialog;
+        }(Serenity.EntityDialog));
+        PurchDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], PurchDialog);
+        Transactions.PurchDialog = PurchDialog;
+    })(Transactions = PriceListUI.Transactions || (PriceListUI.Transactions = {}));
+})(PriceListUI || (PriceListUI = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var PriceListUI;
+(function (PriceListUI) {
+    var Transactions;
+    (function (Transactions) {
+        var PurchEditor = (function (_super) {
+            __extends(PurchEditor, _super);
+            function PurchEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            PurchEditor.prototype.getColumnsKey = function () { return 'Transactions.Purch'; };
+            PurchEditor.prototype.getDialogType = function () { return Transactions.PurchEditorDialog; };
+            PurchEditor.prototype.getLocalTextPrefix = function () { return Transactions.PurchRow.localTextPrefix; };
+            return PurchEditor;
+        }(PriceListUI.Common.GridEditorBase));
+        PurchEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], PurchEditor);
+        Transactions.PurchEditor = PurchEditor;
+    })(Transactions = PriceListUI.Transactions || (PriceListUI.Transactions = {}));
+})(PriceListUI || (PriceListUI = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var PriceListUI;
+(function (PriceListUI) {
+    var Transactions;
+    (function (Transactions) {
+        var PurchEditorDialog = (function (_super) {
+            __extends(PurchEditorDialog, _super);
+            function PurchEditorDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Transactions.PurchForm(_this.idPrefix);
+                return _this;
+            }
+            PurchEditorDialog.prototype.getFormKey = function () { return Transactions.PurchForm.formKey; };
+            PurchEditorDialog.prototype.getLocalTextPrefix = function () { return Transactions.PurchRow.localTextPrefix; };
+            PurchEditorDialog.prototype.getNameProperty = function () { return Transactions.PurchRow.nameProperty; };
+            return PurchEditorDialog;
+        }(PriceListUI.Common.GridEditorDialog));
+        PurchEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], PurchEditorDialog);
+        Transactions.PurchEditorDialog = PurchEditorDialog;
+    })(Transactions = PriceListUI.Transactions || (PriceListUI.Transactions = {}));
+})(PriceListUI || (PriceListUI = {}));
+var PriceListUI;
+(function (PriceListUI) {
+    var Transactions;
+    (function (Transactions) {
+        var PurchGrid = (function (_super) {
+            __extends(PurchGrid, _super);
+            function PurchGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            PurchGrid.prototype.getColumnsKey = function () { return 'Transactions.Purch'; };
+            PurchGrid.prototype.getDialogType = function () { return Transactions.PurchDialog; };
+            PurchGrid.prototype.getIdProperty = function () { return Transactions.PurchRow.idProperty; };
+            PurchGrid.prototype.getLocalTextPrefix = function () { return Transactions.PurchRow.localTextPrefix; };
+            PurchGrid.prototype.getService = function () { return Transactions.PurchService.baseUrl; };
+            return PurchGrid;
+        }(Serenity.EntityGrid));
+        PurchGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], PurchGrid);
+        Transactions.PurchGrid = PurchGrid;
+    })(Transactions = PriceListUI.Transactions || (PriceListUI.Transactions = {}));
 })(PriceListUI || (PriceListUI = {}));
 //# sourceMappingURL=PriceListUI.Web.js.map

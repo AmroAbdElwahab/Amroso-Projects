@@ -7455,3 +7455,9 @@ section.content > .s-DataGrid {
 .s-Setup-VendorDialog .caption {
   width: 150px;
 }
+.s-Transactions-PurchDialog > .size {
+  width: 650px;
+}
+.s-Transactions-PurchDialog .caption {
+  width: 150px;
+}

@@ -86,6 +86,9 @@
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PriceList.Entities">
+      <HintPath>..\..\..\Entities\Entities\bin\Debug\PriceList.Entities.dll</HintPath>
+    </Reference>
     <Reference Include="Serenity.Core, Version=2.8.11.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Serenity.Core.2.8.11\lib\net45\Serenity.Core.dll</HintPath>
       <Private>True</Private>
@@ -567,6 +570,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </Content>
     <Content Include="Imports\ServerTypings\Setup.VendorColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </Content>
+    <Content Include="Imports\ServerTypings\Transactions.PurchColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </Content>
     <Content Include="Modules\Membership\Account\SignUp\AccountSignUp.AdminLTE.cshtml" />
@@ -1575,6 +1581,20 @@
     <TypeScriptCompile Include="Modules\Setup\Vendor\VendorDialog.ts" />
     <TypeScriptCompile Include="Modules\Setup\Vendor\VendorEditor.ts" />
     <TypeScriptCompile Include="Modules\Setup\Vendor\VendorEditorDialog.ts" />
+    <Content Include="Modules\Transactions\Purch\PurchIndex.cshtml" />
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Transactions.PurchRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Transactions.PurchService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="D:\Amroso Projects\PriceList\PriceListUI\PriceListUI\PriceListUI.Web\Imports\ServerTypings\Transactions.PurchForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Transactions\Purch\PurchGrid.ts" />
+    <TypeScriptCompile Include="Modules\Transactions\Purch\PurchDialog.ts" />
+    <TypeScriptCompile Include="Modules\Transactions\Purch\PurchEditor.ts" />
+    <TypeScriptCompile Include="Modules\Transactions\Purch\PurchEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1599,6 +1619,9 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\Setup.VendorEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\Transactions.PurchEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Modules\Administration\Language\LanguageLookup.cs" />
@@ -1730,9 +1753,16 @@
     <Compile Include="Modules\Setup\Vendor\VendorRepository.cs" />
     <Compile Include="Modules\Setup\Vendor\VendorEndpoint.cs" />
     <Compile Include="Modules\Setup\Vendor\VendorPage.cs" />
+    <Compile Include="Modules\Transactions\Purch\PurchRow.cs" />
+    <Compile Include="Modules\Transactions\Purch\PurchColumns.cs" />
+    <Compile Include="Modules\Transactions\Purch\PurchForm.cs" />
+    <Compile Include="Modules\Transactions\Purch\PurchRepository.cs" />
+    <Compile Include="Modules\Transactions\Purch\PurchEndpoint.cs" />
+    <Compile Include="Modules\Transactions\Purch\PurchPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Modules\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

@@ -106,6 +106,14 @@ namespace MVC
             public const string Error = "~/Views/Shared/Error.cshtml";
             public const string LeftNavigation = "~/Views/Shared/LeftNavigation.cshtml";
         }
+
+        public static class Transactions
+        {
+            public static class Purch
+            {
+                public const string PurchIndex = "~/Modules/Transactions/Purch/PurchIndex.cshtml";
+            }
+        }
     }
 }
 
